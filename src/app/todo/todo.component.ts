@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TodoComponent implements OnInit{
   Task!: string | null;
-  store!: string;
+ editingIndex: number | null = null; 
 
   ngOnInit(): void {
      this.Task = localStorage?.getItem("Task") != null ? localStorage?.getItem("Task") : '';
@@ -20,8 +20,12 @@ export class TodoComponent implements OnInit{
   addTask(newTask: string): void {
     const trimmedTask = newTask.trim();
     if (trimmedTask !== '') {
-      this.tasks.push(trimmedTask);
-      //localStorage.setItem("Task", JSON.stringify(this.tasks));
+      if (this.editingIndex !== null) {
+        this.tasks[this.editingIndex] = trimmedTask;
+        this.editingIndex = null; 
+      } else {
+        this.tasks.push(trimmedTask);
+      }
       localStorage.setItem("Task", this.tasks.toString());
     }
   }
@@ -29,7 +33,11 @@ export class TodoComponent implements OnInit{
     this.tasks.splice(index,1);
     localStorage.setItem("Task", this.tasks.toString());
   }
-  editTask(index:number) :void{
-    
+ editTask(index:number): void {
+    this.editingIndex = index; 
+    const taskToEdit = this.tasks[index];
+    const taskInput = document.getElementById('taskInput') as HTMLInputElement;
+    console.log(taskInput.value);
+    taskInput.value = taskToEdit;
   }
 }

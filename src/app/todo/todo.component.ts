@@ -27,6 +27,8 @@ export class TodoComponent implements OnInit{
         this.tasks.push(trimmedTask);
       }
       localStorage.setItem("Task", this.tasks.toString());
+       const taskInput = document.getElementById('taskInput') as HTMLInputElement;
+      taskInput.value = ''; // clear the input field
     }
   }
   deleteTask(index:number):void{

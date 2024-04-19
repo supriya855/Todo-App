@@ -1,0 +1,47 @@
+.form-template{
+    margin-top:50px;
+    margin-left:400px;
+    width:460px;
+    padding:250px 10px;
+    border:1px solid rgb(210, 245, 246);
+    background-color: rgb(238, 251, 252);
+
+}
+.main-h{
+    margin-top:10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-left:10px;
+    width:400px;
+}
+input{
+    width:600px;
+    border:1px solid black;
+    border-radius: 6px;
+}
+button{
+    padding:5px;
+    border:1px solid black;
+    border-radius: 6px;
+    background-color: white;
+    margin-left:20px;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 10px; 
+    text-align: center;
+  }
+  h2{
+    display: block;
+    margin-top:-240px;
+    text-align: center;
+  }
+  #l-b{
+    margin-top:10px;
+    padding:3px;
+  }

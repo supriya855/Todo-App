@@ -1,4 +1,4 @@
-<form class="form-template" (ngSubmit)="addTask(taskInput.value)">
+<!-- <form class="form-template" (ngSubmit)="addTask(taskInput.value)">
   <h2>Todo App</h2>
     <div class="main-h">
       <input type="text" #taskInput placeholder="Add Task">
@@ -10,4 +10,18 @@
           <button id="l-b" type="button" (click)="editTask(i)">edit</button>
         </li>
       </ul> 
+  </form> -->
+<form class="form-template" (ngSubmit)="addTask(taskInput.value)">
+    <h2>Todo App</h2>
+    <div class="main-h">
+      <input type="text" #taskInput id="taskInput" placeholder="Add Task">
+      <button type="submit" [innerText]="editingIndex !== null ? 'Update' : 'Add'"></button>
+    </div>
+    <ul>
+      <li *ngFor="let task of tasks; let i=index">{{task}}
+        <button id="l-b" type="button" (click)="deleteTask(i)">delete</button>
+        <button id="l-b" type="button" (click)="editTask(i)">edit</button>
+      </li>
+    </ul> 
   </form>
+  

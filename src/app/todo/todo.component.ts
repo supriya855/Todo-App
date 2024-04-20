@@ -39,6 +39,7 @@ export class TodoComponent implements OnInit{
     this.editingIndex = index; 
     const taskToEdit = this.tasks[index];
     const taskInput = document.getElementById('taskInput') as HTMLInputElement;
+    taskInput.focus()
     console.log(taskInput.value);
     taskInput.value = taskToEdit;
   }

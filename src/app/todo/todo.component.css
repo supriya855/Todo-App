@@ -142,7 +142,13 @@ input {
   outline: 1px solid rgb(193, 193, 193);
 }
 
-/* .todo-buttons{
+.todo-item input[type="checkbox"] {
+  width: 15px; 
+  height: 15px; 
+  margin-top : 4px;
+  color : rgb(213, 213, 213)
+}
 
-} */
+
+
 
